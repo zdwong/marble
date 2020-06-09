@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
   }
 
   /* Parameterization of ViBe. */
-  typedef ViBeSequential<3, Manhattan<3> >                                ViBe;
+  typedef ViBeSequential<3, Manhattan<3> >  ViBe;
 
   /* Random seed. */
   srand(time(NULL));
@@ -49,8 +49,7 @@ int main(int argc, char** argv) {
 #ifdef VIS_VID
   string outputVideoPath = "./ccb_airport_mask/airport.avi";  
   cv::VideoWriter outputVideo;
-  cv::Size S = cv::Size((int)width,
-		        (int)height);
+  cv::Size S = cv::Size((int)width, (int)height);
   double r = decoder.get(CV_CAP_PROP_FPS);
   outputVideo.open(outputVideoPath, CV_FOURCC('M', 'J', 'P', 'G'), r, S, true);
 #endif
@@ -79,7 +78,8 @@ int main(int argc, char** argv) {
 
     vector<vector<Point> > contours;
     vector<Vec4i> hierarchy;
-    findContours(segmentationMap, contours, hierarchy, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
+    findContours(segmentationMap, contours, hierarchy, 
+		 CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
 
     vector<Rect> boundRect(contours.size());
     vector<vector<Point> > contours_poly( contours.size() );
@@ -130,12 +130,10 @@ int main(int argc, char** argv) {
     }
 
   }
-
+	
   std::ofstream out(argv[2]);
   out << res_json;
-
   delete vibe;
-
   decoder.release();
 
   return EXIT_SUCCESS;
