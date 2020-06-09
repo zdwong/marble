@@ -11,6 +11,7 @@ mkdir_lock = threading.Lock()
 dest_folder = 'crop_image_path'
 prefix_len = len('path_prefix')
 
+
 class ProcessThread(threading.Thread):
     def __init__(self, thread_id, q, func):
         threading.Thread.__init__(self)
@@ -52,6 +53,7 @@ def start_group_threads(lines, process_func):
 
     print("exist main Thread")
 
+    
 def center_crop_core(line):
     face_img_file = line.split(' ')[0]
     img = cv2.imread(face_img_file)
@@ -68,11 +70,13 @@ def center_crop_core(line):
     whole_file_name = os.path.join(prefix_path, dst_file_name)
     cv2.imwrite(whole_file_name, img)
 
+    
 def center_crop(face_id_file):
     with open(face_id_file) as face_fl:
         lines = face_fl.readlines()
         start_group_threads(lines, center_crop_core)
 
+        
 if __name__ == '__main__':
     train_list = 'train_list.list'
     if not os.path.exists(dest_folder):
