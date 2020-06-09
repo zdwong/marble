@@ -1,5 +1,5 @@
 ## Build and Run Docker Image
-sudo apt-get update && apt-get install docker-engine && service docker start
+apt-get update && apt-get install docker-engine && service docker start
 
 docker build -t **tag_name**
 
