@@ -49,3 +49,5 @@
   > git status | grep typechange | awk '{print $2}' | xargs git checkout
   
   > git log && git reset --hard **commit_id**
+
+  > git merge branch
