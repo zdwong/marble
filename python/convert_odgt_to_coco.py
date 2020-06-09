@@ -1,5 +1,3 @@
-# coding: utf-8
-
 import os
 import json
 import argparse
@@ -62,14 +60,10 @@ def crowdhuman_to_coco(odgt_file, image_path, output_json_file):
 
             #if "ignore" in gt_box[j]['head_attr'] and gt_box[j]['head_attr']['ignore']:
             #    ignore = gt_box[j]['head_attr']['ignore']
-
             if "ignore" in gt_box[j]['extra'] and gt_box[j]['extra']['ignore']:
                  ignore = gt_box[j]['extra']['ignore']
             if category == 'mask':
                 ignore = 1
-
-            # if ignore:
-            #   continue
 
             annotation = {
                           'area': fbox[2] * fbox[3], 
@@ -91,10 +85,9 @@ def crowdhuman_to_coco(odgt_file, image_path, output_json_file):
                           'height': f_h, 
                           'vis_ratio': (v_w * v_h) / (f_w * f_h) 
             #              'vis_ratio': 1 
-                         }
+                           }
 
             json_dict['annotations'].append(annotation)
-
             instance_id += 1
 
     for cate, cid in categories.items():
