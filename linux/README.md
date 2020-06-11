@@ -62,3 +62,9 @@
   > docker image ls
   
   > docker image rm image_id
+  
+  > docker build -t tag_name
+
+  > docker run -d -it -p 80:8080 -v /ssd:/ssd -v /home:/home tag_name
+
+  > docker exec -it container_id bash
