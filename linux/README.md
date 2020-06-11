@@ -51,3 +51,14 @@
   > git log && git reset --hard **commit_id**
 
   > git merge branch
+  
+#### Docker
+  > docker image prune -a
+  
+  > docker stop container_id
+  
+  > docker rm container_id
+  
+  > docker image ls
+  
+  > docker image rm image_id
