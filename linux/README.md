@@ -30,9 +30,11 @@
 ### Text Processing
 
 #### sed
-  > sed -i "s/origin/dst/g"  file  ；-i inplace edit 
+  > sed -i "s/origin/dst/g"  filename  ；-i inplace edit 
   
   > sed 's/^[ ]*//g' filename
+  
+  > sed -i '/*pattern*/d' filename
   
 #### vim 
   > :%s/origin/dst/g
