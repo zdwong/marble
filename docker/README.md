@@ -15,7 +15,7 @@ docker commit -a wong -m "Seq-FIQ" -p **container_id** addr/name/seq-fiq:v0
 docker push addr/name/seq-fiq:v0
 
 
-### Difference of docker and nvidia-docker 
+### Difference of docker and nvidia-docker command
 In old version, nvidia-docker for GPU while docker for CPU
 
 In new version, docker can for GPU and CPU
