@@ -52,3 +52,5 @@ RUN conda install -c conda-forge scikit-image
 RUN conda install keras=2.2.4
 
 # workspace
+WORKDIR /workspace                                                                                                                       │
+RUN chmod -R a+w /workspace
