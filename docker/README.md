@@ -23,3 +23,5 @@ In new version, docker can for GPU and CPU
 ### Note
 1. pip install -i  https://pypi.tuna.tsinghua.edu.cn/simple numpy   **change install source address** 
 2. Change apt-get install source address
+3. conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+4. conda config --set show_channel_urls yes
