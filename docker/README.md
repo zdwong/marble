@@ -28,8 +28,11 @@ In new version, docker can for GPU and CPU
 
 ### Add ~/.condarc
 channels:
+  
   - defaults
+  
 show_channel_urls: true
+
 channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
 default_channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
